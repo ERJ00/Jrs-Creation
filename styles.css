@@ -6,13 +6,35 @@ body {
   color: #fff;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3b3b3b;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00ada5;
+}
+
 header {
   background-image: url("https://paras-ipfs.paras.id/bafybeidhvydulgtkyqlqzgbs6y7po5wpkrfl6rmxsxqkiy45qaq44numre");
   background-size: cover;
   background-position: center;
   padding: 0;
   text-align: center;
-  height: 40vh; 
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,69 +57,82 @@ header {
 }
 
 #header-container h1 {
-  font-family: 'Kablammo';
-  font-size: 5rem;
+  font-family: "Kablammo";
+  font-size: 8rem;
   margin: 0;
   color: #c7b4b4;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 30px 10px #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000, 0px 30px 10px #000;
 }
 
 #header-container p {
-  font-family: 'Protest Revolution';
-  font-size: 1rem;
+  font-family: "Protest Revolution";
+  font-size: 2vw;
   margin: 0;
+  margin-top: 10px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000, 0px 30px 10px #000;
 }
 
 section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 20px;
-  background-image: linear-gradient(
-    135deg,
-    rgb(0, 31, 29) 0,
-    rgb(46, 0, 36)
-  );
+  background-image: linear-gradient(135deg, rgb(0, 31, 29) 0, rgb(46, 0, 36));
+  width: auto;
+  columns: 5;
+  column-gap: 30px;
+  padding: 30px;
 }
 
 .art-piece {
-  width: 300px;
-  margin: 10px;
-  padding: 10px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+  break-inside: avoid;
+  transition: 0.5s;
 }
 
 .art-piece img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  border-radius: 15px;
+  border-style: ridge;
+  border-width: 7px;
+  border-color: rgb(0, 0, 0);
 }
-
-/* .art-piece img:hover {
-  box-shadow: inset rgb(0, 0, 0) 0px 0px 60px -12px; 
-} */
 
 .art-piece:hover {
   transform: scale(1.1);
   border-radius: 10px;
-  background-image: linear-gradient(
-    135deg,
-    rgb(0, 173, 165) 0,
-    rgb(175, 0, 137)
-  );
+  background-image: linear-gradient(135deg, #00fff2, #ff00c8);
   box-shadow: 0px 0px 50px #000000;
+  padding: 5px;
+}
+
+.art-piece img:hover {
+  border-radius: 0;
+  border-style: none;
 }
 
 footer {
-  background-color: #222;
+  background-image: linear-gradient(135deg, #00857e, #7c0061);
   padding: 10px;
   text-align: center;
+}
+
+footer p {
+  margin: 10px 0px 0px 0px;
+}
+
+.fa-brands,
+.fa-regular {
+  color: #00fff2;
+  font-size: 1.5rem;
+  margin: 0px 5px 0px 5px;
+  transition: 0.5s;
+}
+
+.fa-brands:hover,
+.fa-regular:hover {
+  transform: scale(1.5);
+  color: #ff00c8;
+  text-shadow: 0px 0px 10px #000000;
 }
 
 .modal {
@@ -107,15 +142,25 @@ footer {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#indexDisplay {
+  font-family: "Protest Revolution";
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0px 0px 5px 0px;
 }
 
 .modal-content {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -137,6 +182,8 @@ footer {
   background: none;
   border: none;
   outline: none;
+  height: 100%;
+  opacity: 0.5;
 }
 
 .modal-btn-left {
@@ -145,4 +192,66 @@ footer {
 
 .modal-btn-right {
   right: 10px;
+}
+
+.modal-btn-left:focus,
+.modal-btn-right:focus {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* semi-large screen */
+@media screen and (max-width: 1200px) {
+  section {
+    columns: 4;
+  }
+
+  header {
+    height: 250px;
+  }
+
+  #header-container h1 {
+    font-size: 6.5rem;
+  }
+
+  #header-container p {
+    font-size: 1.3rem;
+  }
+}
+
+/* medium screen */
+@media screen and (max-width: 768px) {
+  section {
+    columns: 3;
+  }
+
+  header {
+    height: 250px;
+  }
+
+  #header-container h1 {
+    font-size: 12vw;
+  }
+
+  #header-container p {
+    font-size: 1.7rem;
+  }
+}
+
+/* small screen */
+@media screen and (max-width: 480px) {
+  section {
+    columns: 2;
+  }
+
+  header {
+    height: 150px;
+  }
+
+  #header-container h1 {
+    font-size: 12vw;
+  }
+
+  #header-container p {
+    font-size: 4vw;
+  }
 }
