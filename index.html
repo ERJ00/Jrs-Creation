@@ -15,9 +15,14 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Kablammo&family=Protest+Revolution"
     />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
   </head>
   <body>
+    <div id="loading-screen">
+      <div class="loader"></div>
+    </div>
     <header>
       <div id="header-container">
         <h1>JR's Creation</h1>
@@ -25,34 +30,76 @@
       </div>
     </header>
 
-    <section></section>
+    <nav>
+      <button id="home-btn" class="category-btn navButton">home</button>
+      <button id="illustration-btn" class="category-btn navButton">
+        illustration
+      </button>
+      <button id="vexel-btn" class="category-btn navButton">vexel art</button>
+      <button id="chibi-btn" class="category-btn navButton">chibi</button>
+      <!-- NFT Dropdown Container -->
+      <div class="dropdown">
+        <button id="nft-btn" class="category-btn navButton">NFT</button>
+        <div class="dropdown-content">
+          <div>
+            <button class="category-btn nftOption">citizen punk</button>
+          <button class="category-btn nftOption">kodai no mask</button>
+          <button class="category-btn nftOption">near reaper</button>
+          <button class="category-btn nftOption">nearbadge</button>
+          <button class="category-btn nftOption">nearverse</button>
+          <button class="category-btn nftOption">padoru</button>
+          <button class="category-btn nftOption">Punks</button>
+          <button class="category-btn nftOption">seven deadly sins</button>
+          <button class="category-btn nftOption">talisman</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section id="artSection"></section>
 
     <footer>
       <div>
-        <a href="https://www.facebook.com/jrsart77" target="_blank"
+        <a
+          href="https://www.facebook.com/jrsart77"
+          target="_blank"
+          title="facebook"
           ><i class="fa-brands fa-facebook"></i
         ></a>
         <a
           href="https://www.tiktok.com/@jrsart7?_t=8jb0xuHwVR2&_r=1"
           target="_blank"
+          title="Tiktok"
           ><i class="fa-brands fa-tiktok"></i
         ></a>
-        <a href="https://www.instagram.com/jrsart7/" target="_blank"
+        <a
+          href="https://www.instagram.com/jrsart7/"
+          target="_blank"
+          title="Instagram"
           ><i class="fa-brands fa-instagram"></i
         ></a>
-        <a href="https://twitter.com/JRsART7" target="_blank"
+        <a href="https://twitter.com/JRsART7" target="_blank" title="Twitter"
           ><i class="fa-brands fa-twitter"></i
         ></a>
-        <a href="https://www.pinterest.ph/JRsART7/" target="_blank"
+        <a
+          href="https://www.pinterest.ph/JRsART7/"
+          target="_blank"
+          title="Pinterest"
           ><i class="fa-brands fa-pinterest"></i
         ></a>
-        <a href="https://www.pixiv.net/users/79063096" target="_blank"
+        <a
+          href="https://www.pixiv.net/users/79063096"
+          target="_blank"
+          title="Pixiv"
           ><i class="fa-brands fa-pixiv"></i
         ></a>
-        <a href="https://www.artstation.com/jrsart7" target="_blank"
+        <a
+          href="https://www.artstation.com/jrsart7"
+          target="_blank"
+          title="Artstation"
           ><i class="fa-brands fa-artstation"></i
         ></a>
-        <a href="mailto:jrsart7@gmail.com" target="_blank"
+        <a href="mailto:jrsart7@gmail.com" target="_blank" title="Email"
           ><i class="fa-regular fa-envelope"></i
         ></a>
       </div>
@@ -60,13 +107,15 @@
     </footer>
 
     <div id="myModal" class="modal">
-      <div class="modal-content">
+      <div class="modal-content w3-modal-content w3-animate-zoom">
         <div id="indexDisplay">1/10</div>
         <button class="modal-btn modal-btn-left" id="leftButton">
           <i class="fa-solid fa-angle-left"></i>
           <!-- Left arrow -->
         </button>
-        <img id="modalImg" class="modal-img" src="" alt="Modal Image" />
+        <div id="modalImgContainer"></div>
+        <!-- <img id="modalImg" class="modal-img" src="" alt="Modal Image" /> -->
+        <!-- <video id="modalImg" class="modal-img" src="" alt="Modal Image"></video> -->
         <button class="modal-btn modal-btn-right" id="rightButton">
           <i class="fa-solid fa-angle-right"></i>
           <!-- Right arrow -->
